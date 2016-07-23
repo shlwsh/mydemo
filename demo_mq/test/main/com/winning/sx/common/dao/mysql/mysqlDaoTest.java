@@ -1,0 +1,18 @@
+package com.winning.sx.common.dao.mysql;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+/**
+ * Created by smq on 16/7/23.
+ */
+public class mysqlDaoTest {
+    @Test
+    public void runSql() throws Exception {
+        mysqlDao d = new mysqlDao();
+        d.connSQL();
+        d.runSql();
+    }
+
+}

@@ -1,0 +1,95 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    <context:component-scan base-package="*.*">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    <bean id="dsDruid1" class="com.winning.dapi.data.sqlserver.SqlserverDataAccessService">
+        <constructor-arg>
+            <value>core</value>
+        </constructor-arg>
+        <constructor-arg>
+            <bean class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+                <property name="url"
+                          value="jdbc:sqlserver://192.168.160.122:1433; DatabaseName=WinningMDM"/>
+                <property name="username" value="sa"/>
+                <property name="password" value=""/>
+                <!-- 初始化连接大小 -->
+                <property name="initialSize" value="0"/>
+                <!-- 连接池最大使用连接数量 -->
+                <property name="maxActive" value="20"/>
+                <!-- 连接池最小空闲 -->
+                <property name="minIdle" value="0"/>
+                <!-- 获取连接最大等待时间 -->
+                <property name="maxWait" value="60000"/>
+                <!--
+                <property name="poolPreparedStatements" value="true" />
+                <property name="maxPoolPreparedStatementPerConnectionSize" value="33" />
+                -->
+                <property name="validationQuery" value="select 1"/>
+                <property name="testOnBorrow" value="false"/>
+                <property name="testOnReturn" value="false"/>
+                <property name="testWhileIdle" value="true"/>
+                <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+                <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+                <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+                <property name="minEvictableIdleTimeMillis" value="25200000"/>
+                <!-- 打开removeAbandoned功能 -->
+                <property name="removeAbandoned" value="true"/>
+                <!-- 1800秒，也就是30分钟 -->
+                <property name="removeAbandonedTimeout" value="1800"/>
+                <!-- 关闭abanded连接时输出错误日志 -->
+                <property name="logAbandoned" value="true"/>
+                <!-- 监控数据库 -->
+                <!-- <property name="filters" value="stat" /> -->
+                <property name="filters" value="mergeStat"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+    <!-- Jedis 连接池配置-->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxActive" value="${redis.pool.maxActive}" />
+        <property name="maxIdle" value="${redis.pool.maxIdle}" />
+        <property name="maxWait" value="${redis.pool.maxWait}" />
+        <property name="testOnBorrow" value="${redis.pool.testOnBorrow}" />
+    </bean>
+    <!-- spring的属性加载器，加载properties文件中的属性 -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+        <value>datasource1-context.properties</value>
+        </property>
+        <property name="fileEncoding" value="utf-8" />
+    </bean>
+    <!-- Jedis ConnectionFactory 数据库连接配置-->
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="hostName" value="${redis.hostname}" />
+        <property name="port" value="${redis.port}" />
+        <property name="password" value="${redis.password}" />
+        <property name="poolConfig" ref="jedisPoolConfig" />
+    </bean>
+    <!--  redisTemplate配置，redisTemplate是对Jedis的对redis操作的扩展，有更多的操作，封装使操作更便捷 -->
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory"   ref="jedisConnectionFactory" />
+    </bean>
+    <bean id="userService" class="com.wnsx.java.UserService">
+        <property name="redisTemplate">
+            <ref bean="redisTemplate" />
+        </property>
+    </bean>
+    <!-- 配置redis 缓存服务器 -->
+    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="hostName" value="${redis.hostname}" />
+        <property name="port" value="${redis.port}" />
+        <!-- <property name="password" value="${redis.password}" /> -->
+    </bean>
+    <!-- redis操作模板 -->
+    <bean id="redisTemplate001" class="org.springframework.data.redis.core.RedisTemplate" >
+        <property name="connectionFactory">
+            <ref bean="connectionFactory"/>
+        </property>
+    </bean>
+</beans>

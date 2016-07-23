@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3610476391">
+    <data-source source="LOCAL" name="SQL Server (Microsoft) - WinningMDM@127.0.0.1" uuid="058a6b26-fd54-4560-b76a-09d5d92726fa">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://127.0.0.1:1433;databaseName=WinningMDM</jdbc-url>
+    </data-source>
+  </component>
+</project>
