@@ -40,17 +40,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mysqlDao.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mysqlDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/winning/sx/common/dao/mysql/mysqlDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
-                <marker date="1469266293000" expanded="true" signature="2170:2249" ph="insert into ju_users... " />
-                <marker date="1469266293000" expanded="true" signature="2913:2935" ph="select * fro... ju_users" />
-                <marker date="1469266293000" expanded="true" signature="3461:3515" ph="update ju_us... " />
-                <marker date="1469266293000" expanded="true" signature="3727:3768" ph="delete from " />
-                <marker date="1469266293000" expanded="true" signature="3910:3932" ph="select * fro... ju_users" />
+                <element signature="imports" expanded="false" />
+                <marker date="1469266356000" expanded="true" signature="2190:2269" ph="insert into ju_users... " />
+                <marker date="1469266356000" expanded="true" signature="2933:2955" ph="select * fro... ju_users" />
+                <marker date="1469266356000" expanded="true" signature="3481:3535" ph="update ju_us... " />
+                <marker date="1469266356000" expanded="true" signature="3747:3788" ph="delete from " />
+                <marker date="1469266356000" expanded="true" signature="3930:3952" ph="select * fro... ju_users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mysqlDaoTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/main/com/winning/sx/common/dao/mysql/mysqlDaoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,9 +177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -218,6 +228,48 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo_mq" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo_mq" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="winning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysql" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -487,6 +539,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1064,6 +1119,7 @@
       <workItem from="1469264659240" duration="96000" />
       <workItem from="1469265277536" duration="37000" />
       <workItem from="1469266302527" duration="26000" />
+      <workItem from="1469267132711" duration="39000" />
     </task>
     <servers />
   </component>
@@ -1100,7 +1156,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23011000" />
+    <option name="totallyTimeSpent" value="23050000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1445,26 +1501,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/main/com/winning/sx/common/dao/mysql/mysqlDaoTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/winning/sx/common/dao/mysql/mysqlDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <marker date="1469266356000" expanded="true" signature="2190:2269" ph="insert into ju_users... " />
+            <marker date="1469266356000" expanded="true" signature="2933:2955" ph="select * fro... ju_users" />
+            <marker date="1469266356000" expanded="true" signature="3481:3535" ph="update ju_us... " />
+            <marker date="1469266356000" expanded="true" signature="3747:3788" ph="delete from " />
+            <marker date="1469266356000" expanded="true" signature="3930:3952" ph="select * fro... ju_users" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/winning/sx/common/dao/mysql/mysqlDao.java">
+    <entry file="file://$PROJECT_DIR$/test/main/com/winning/sx/common/dao/mysql/mysqlDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
           <folding>
-            <marker date="1469266293000" expanded="true" signature="2170:2249" ph="insert into ju_users... " />
-            <marker date="1469266293000" expanded="true" signature="2913:2935" ph="select * fro... ju_users" />
-            <marker date="1469266293000" expanded="true" signature="3461:3515" ph="update ju_us... " />
-            <marker date="1469266293000" expanded="true" signature="3727:3768" ph="delete from " />
-            <marker date="1469266293000" expanded="true" signature="3910:3932" ph="select * fro... ju_users" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
