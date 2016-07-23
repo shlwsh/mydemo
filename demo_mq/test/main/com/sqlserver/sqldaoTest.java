@@ -9,6 +9,7 @@ import org.junit.Test;
 public class sqldaoTest {
     @Test
     public void sqlRun() throws Exception {
+        //smq 2016-7-23 modify
         new sqldao().sqlRun();
     }
 
